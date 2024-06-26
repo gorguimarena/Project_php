@@ -2,7 +2,7 @@
 
 class Administrateur
 {
-    public function inscrire_admin()
+    public function inscrire_admin ()
     {
 
     }
