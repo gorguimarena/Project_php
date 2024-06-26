@@ -29,64 +29,19 @@ class Administrateur
         }
 
     }
-    //methode pour creer un compte
-    public function creerCompte($id_user,$connxion,$password,$email)
+
+    public function inscrire_bibliothecaire()
     {
-        //preparationde la requete
-        $stmt=$connxion->prepare("INSERT INTO compte VALUES (?,?,?)");
-        //donner les parametre de la requete
-        $stmt->bind_param('ssi',$email,$password,$id_user);
-        //on execute la requete
-        $result=$stmt->execute();
-        //verifie si la requete est ok
-        if ($result->affected_rows>0){
-            return true;
-        }else{
-            return false;
-        }
+
     }
 
-    public function modifier_info_user($nom,$prenom,$status,$id)
+    public function modifier_info_user()
     {
-        //on recupere la connection
-        $connexion=database();
-        if ($connexion){
-            //preparationde la requete
-            $stmt=$connexion->prepare("UPDATE compte SET (prenom=?,nom=?,status=?) WHERE id=?");
-            //donner les parametre de la requete
-            $stmt->bind_param('sss',$nom,$prenom,$status,$id);
-            //on execute la requete
-            $result=$stmt->execute();
-            //verifie si la requete est ok
-            if ($result->affected_rows>0){
-                return true;
-            }else{
-                return false;
-            }
-        }else{
-            echo 'error';
-        }
+
     }
 
-    public function supp_user($id)
+    public function supp_user()
     {
-        //on recupere la connection
-        $connexion=database();
-        if ($connexion){
-            //preparationde la requete
-            $stmt=$connexion->prepare("DELETE FROM utilisateur WHERE id_utilisateur=?");
-            //donner les parametre de la requete
-            $stmt->bind_param('i',$id);
-            //on execute la requete
-            $result=$stmt->execute();
-            //verifie si la requete est ok
-            if ($result->affected_rows>0){
-                return true;
-            }else{
-                return false;
-            }
-        }else{
-            echo 'error';
-        }
+
     }
 }
