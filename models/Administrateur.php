@@ -3,6 +3,11 @@
 require_once 'Config/database.php';
 class Administrateur
 {
+    private $nom;
+    private $prenom;
+    private $email;
+    private $password;
+
     //methode pour inscrire un admin ou bibliothequaire
     public function inscrire_admin_or_bibliothequaire($nom,$prenom,$email,$password,$status)
     {
@@ -27,6 +32,7 @@ class Administrateur
         }else{
             return false;
         }
+
 
     }
 
@@ -90,4 +96,41 @@ class Administrateur
             return false;
         }
     }
+
+    //Constructeur
+    public function __construct($nom, $prenom) {
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        
+    }
+    //Methode pour se connecter
+    public function __connect($email, $password) {
+        $this->email = $email;
+        $this->password = $password;
+    
+    if($this->email & $this->password){
+        echo "utilisateur connecter";
+        return true;
+    }else
+       echo "echec Connection";
+       return false;
+    }
+    //Methode pour se deconnecter
+    public function __deconnect($email, $password){
+        $this->email = $email;
+        $this->password = $password;
+    
+        echo "utilisateur Deconnecter";
+        return true;
+    
+    }
+    //Methode pour supprime un compte
+    public function __suppCompte($email, $password){
+        $this->email = $email;
+        $this->password = $password;
+    
+        echo "Compte Supprimer";
+        return true;
+    }
+
 }
