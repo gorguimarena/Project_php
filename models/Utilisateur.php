@@ -5,6 +5,10 @@ class Utilisateur
     public function inscrire()
     {
         
+
+
+
+        
     }
 
     public function consulter_livre()
