@@ -1,11 +1,7 @@
 <?php
 
-<<<<<<< HEAD
-    class utilisateur {
-=======
 class Utilisateur
 {
->>>>>>> 725f7c20a6c6cb55422d24ebd9455abee4b9bee7
     private $nom;
     private $prenom;
 
@@ -14,26 +10,6 @@ class Utilisateur
     $this->prenom = $prenom;
     }
 
-<<<<<<< HEAD
-
- public function modifier_info($prenom, $nom) {
-    $this->prenom = $prenom;
-    $this->nom = $nom;
-        return true;
-    }
-
-    
- public function consulter_info($prenom, $nom) {
-    echo "votre".$this->prenom;
-    echo "votre".$this->nom;
-    }
-
-    
- public function getprenom() {
-    return $this->prenom;
-    }
-
-=======
     public function modifier_info($prenom, $nom) {
      // Connexion à la base de données
         $con = database(); if ($con) {
@@ -68,14 +44,9 @@ class Utilisateur
     return $this->prenom;
     }
 
->>>>>>> 725f7c20a6c6cb55422d24ebd9455abee4b9bee7
 public function getnom() {
     return $this->nom;
     }
 }
 
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> 725f7c20a6c6cb55422d24ebd9455abee4b9bee7
