@@ -1,35 +1,29 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var images = [
-        'public/images/video.webm',
-        'public/images/image2.jpeg',
-        'public/images/image3.jpeg'
-    ];
+let lastScrollTop = 0;
+let navbar = document.getElementById('nav-bar');
+let timer;
 
-    var indicators = document.querySelector('.carousel-indicators');
-    var inner = document.querySelector('.carousel-inner');
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    images.forEach((image, index) => {
-        var indicator = document.createElement('button');
-        indicator.type = "button";
-        indicator.dataset.bsTarget = "#carouselExampleIndicators";
-        indicator.dataset.bsSlideTo = index;
-        indicator.setAttribute('aria-label', 'Slide ' + (index + 1));
-        if (index === 0) {
-            indicator.classList.add('active');
-            indicator.setAttribute('aria-current', 'true');
-        }
-        indicators.appendChild(indicator);
+    if (scrollTop > lastScrollTop) {
+        // Scroll vers le bas, cache la navbar
+        navbar.classList.add('hidden');
+    } else {
+        // Scroll vers le haut, montre la navbar
+        navbar.classList.remove('hidden');
+    }
 
-        var item = document.createElement('div');
-        item.classList.add('carousel-item');
-        if (index === 0) {
-            item.classList.add('active');
-        }
-        var img = document.createElement('img');
-        img.src = image;
-        img.classList.add('d-block', 'w-100');
-        img.alt = 'Image ' + (index + 1);
-        item.appendChild(img);
-        inner.appendChild(item);
-    });
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Pour Mobile ou défilement en haut de page
+
+    // Réinitialiser le timer lorsqu'on scroll
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+        navbar.classList.remove('hidden');
+        navbar.classList.add('red');
+    }, 150);
+});
+
+// Réinitialise la couleur de la navbar quand on scroll à nouveau
+window.addEventListener('scroll', function() {
+    navbar.classList.remove('red');
 });

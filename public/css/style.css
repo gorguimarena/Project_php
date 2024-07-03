@@ -46,7 +46,7 @@ div strong {
     object-fit: cover;
 }
 .emprunt .container {
-    padding-top: 14%;
+    padding-top: 8%;
     padding-left: 10%;
 }
 
@@ -74,7 +74,7 @@ div strong {
     height: 80vh;
 }
 .bas-page {
-    height: 50px;
+    height: 40px;
     background: #2684FF;
     margin-top: 9%;
 }
@@ -82,3 +82,5 @@ div strong {
 .emprunt .container h6 ,.a_propos_livre h6{
     line-height: 1.5;
 }
+
+

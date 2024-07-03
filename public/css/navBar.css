@@ -1,5 +1,3 @@
-
-
 .nav-bar , .nav-right{
     display: flex;
 }
@@ -7,8 +5,13 @@
     justify-content: space-around;
     align-items: center;
     padding: 12px;
-
 }
+
+header{
+    position: fixed;
+    width: 100%;
+}
+
 .accueil {
     display: flex;
     justify-content: space-around;
@@ -47,4 +50,12 @@
 }
 .mt {
     padding-top: 7%;
+}
+
+.navbar.hidden {
+    top: -60px; /* Cache la navbar */
+}
+
+.navbar.red {
+    background-color: red;
 }
