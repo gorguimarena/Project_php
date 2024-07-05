@@ -31,9 +31,6 @@ class Bibliothecaire{
     }
 
 }
-<<<<<<< HEAD
 
 
 ?>
-=======
->>>>>>> 740684b51fad0b9a89b7ead1001513a8d90043e1

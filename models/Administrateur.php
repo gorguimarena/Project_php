@@ -11,10 +11,6 @@ class Administrateur
         if ($con){
             //on prepare la requete
             $stmt=$con->prepare("INSERT INTO utilisateur VALUES (?,?,?)");
-
-            if ($stmt === false) {
-                return false; // Requête incorrecte
-            }
             //on donne les parametre de la requete
             $stmt->bind_param('sss',$prenom,$nom,$status);
             //on execute la requete
@@ -39,10 +35,6 @@ class Administrateur
     {
         //on prepare la requete
         $stmt=$con->prepare("INSERT INTO compte VALUES (?,?,?)");
-
-        if ($stmt === false) {
-            return false; // Requête incorrecte
-        }
         //on donne les parametre de la requete
         $stmt->bind_param('sss',$email,$password,$id);
         //on execute la requete
@@ -62,9 +54,6 @@ class Administrateur
         if ($con){
             //on prepare la requete
             $stmt=$con->prepare("UPDATE utilisateur SET (?,?,?) WHERE id_utilisateur=?");
-            if ($stmt === false) {
-                return false; // Requête incorrecte
-            }
             //on donne les parametre de la requete
             $stmt->bind_param('sssi',$prenom,$nom,$status,$id);
             //on execute la requete
@@ -87,9 +76,6 @@ class Administrateur
         if ($con){
             //on prepare la requete
             $stmt=$con->prepare("DELETE FROM utilisateur WHERE id_utilisateur=?");
-            if ($stmt === false) {
-                return false; // Requête incorrecte
-            }
             //on donne les parametre de la requete
             $stmt->bind_param('i',$id);
             //on execute la requete
