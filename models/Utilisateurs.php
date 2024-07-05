@@ -1,6 +1,4 @@
 <?php
-<<<<<<< HEAD
-
 class Utilisateurs
 {
     private $nom;
@@ -51,7 +49,6 @@ public function getnom() {
 }
 
 ?>
-=======
 require "../Config/database.php";
 
 class Utilisateurs
@@ -107,4 +104,3 @@ class Utilisateurs
     }
 
 }
->>>>>>> 740684b51fad0b9a89b7ead1001513a8d90043e1
