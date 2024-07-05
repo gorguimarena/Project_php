@@ -1,0 +1,61 @@
+.nav-bar , .nav-right{
+    display: flex;
+}
+.nav-bar {
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+}
+
+.accueil {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    height: 85vh;
+    padding: 17%;
+}
+.accueil .container {
+    padding: 12px;
+}
+
+.nav-right{
+    justify-content: space-between;
+    gap: 20px;
+}
+.nav-right li {
+    list-style: none;
+    font-size: 18px;
+
+}
+ .nav-right li a{
+    text-decoration: none;
+     color: white;
+}
+.nav-bar .logo img {
+    width: 100px;
+}
+.nav-bar .logo {
+    display: flex;
+    align-items: center;
+}
+.center {
+    display: flex;
+    justify-content: center;
+
+}
+.mt {
+    padding-top: 7%;
+}
+
+.navbar.hidden {
+    top: -60px; /* Cache la navbar */
+}
+
+.navbar.red {
+    background-color: red;
+}
