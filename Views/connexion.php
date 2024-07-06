@@ -30,16 +30,66 @@
 <img class="reflet-jaune1" src="../public/images/reflet2.svg">
 <div class="container connexion">
     <h1 class="text-center mb-3">Se connecter</h1>
-    <div class="mb-4">
-        <label for="exampleFormControlInput1" class="form-label">Adresse e-mail </label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <label for="inputPassword5" class="form-label">Mot de passe</label>
-    <input type="password" id="inputPassword5" class="form-control" placeholder="Votre mot de passe" aria-describedby="passwordHelpBlock">
-    <div class="d-grid gap-2 col-6 mx-auto mt-4">
-        <button class="btn btn-primary" type="button">Se connecter</button>
-    </div>
+    <form method="POST" action="">
+        <div class="mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Adresse e-mail </label>
+            <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <label for="inputPassword5" class="form-label">Mot de passe</label>
+        <input type="password" id="inputPassword5" name="password" class="form-control" placeholder="Votre mot de passe" aria-describedby="passwordHelpBlock">
+        <div class="d-grid gap-2 col-6 mx-auto mt-4">
+            <input class="btn btn-primary" type="submit" name="submit" value="Se connecter" >
+        </div>
+    </form>
 
 </div>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    require "../Config/database.php";
+
+    $con = database();
+// Préparation de la requête SQL
+    $stmt = $con->prepare("SELECT * FROM compte WHERE email = ?");
+
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows >0){
+        // Préparation de la requête SQL
+        $stmt = $con->prepare("SELECT * FROM utilisateur WHERE id = ?");
+
+        while ($row=$result->fetch_assoc()){
+            $stmt->bind_param('i', $row['id_user']);
+            $stmt->execute();
+        }
+
+        $result= $stmt->get_result();
+
+        if ($result->num_rows){
+            while ($row=$result->fetch_assoc()){
+                switch ($row['status']){
+                    case "utilisateur":
+                        echo "User simple";
+                        break;
+                    case "administrateur":
+                        echo "admin";
+                        break;
+                    case "bibliothecaire":
+                        echo "bibliothecaire";
+                        break;
+                    default:
+                        echo "mort";
+                }
+            }
+        }
+
+    }
+
+}
+
+?>
 </body>
 </html>
