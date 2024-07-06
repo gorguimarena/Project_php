@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Se connecter</title>
     <link rel="stylesheet" href="../public/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="../public/css/accueil/header.css">
     <link rel="stylesheet" href="../public/css/style_Ins-connect.css">
 </head>
 

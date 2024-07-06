@@ -1,5 +1,5 @@
 <?php
-require "../Config/database.php";
+require "../../Config/database.php";
 // Connexion à la base de données
 $conn = database();
 
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Modifier Utilisateur</title>
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="../../Test/style.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         </head>
         <body>
@@ -52,11 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Gestion des Membres</h1>
             <nav>
                 <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="utilisateur.php">Utilisateurs</a></li>
-                    <li><a href="index.php">Bibliothécaires</a></li>
-                    <li><a href="utilisateur.php">Administrateurs</a></li>
-                    <li><a href="logout.php">Déconnexion</a></li>
+                    <li><a href="../../Test/index.php">Accueil</a></li>
+                    <li><a href="../../Test/utilisateur.php">Utilisateurs</a></li>
+                    <li><a href="../../Test/index.php">Bibliothécaires</a></li>
+                    <li><a href="../../Test/utilisateur.php">Administrateurs</a></li>
+                    <li><a href="../logout.php">Déconnexion</a></li>
                 </ul>
             </nav>
         </header>

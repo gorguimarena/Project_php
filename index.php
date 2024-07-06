@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Biblio</title>
     <link rel="stylesheet" href="public/css/bootstrap.css">
-    <link rel="stylesheet" href="public/css/header.css">
-    <link rel="stylesheet" href="public/css/main.css">
-    <link rel="stylesheet" href="public/css/footer.css">
-    <link rel="stylesheet" href="public/css/cards.css">
+    <link rel="stylesheet" href="public/css/accueil/header.css">
+    <link rel="stylesheet" href="public/css/accueil/main.css">
+    <link rel="stylesheet" href="public/css/accueil/footer.css">
+    <link rel="stylesheet" href="public/css/accueil/cards.css">
 </head>
 <body>
 

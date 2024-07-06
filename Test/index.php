@@ -27,7 +27,7 @@
 <main>
     <section class="user-management">
         <h2>Ajouter un Nouvel Utilisateur</h2>
-        <form id="add-user-form" action="add_user.php" method="post">
+        <form id="add-user-form" action="../Views/admin/add_user.php" method="post">
             <label for="nom">Nom d'utilisateur:</label>
             <input type="text" id="nom" name="nom" required>
 

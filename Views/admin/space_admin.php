@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Membres de la Bibliothèque</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../public/css/accueil/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/utilisateurs/header.css">
+    <link rel="stylesheet" href="../../public/css/utilisateurs/footer.css">
+    <link rel="stylesheet" href="../../public/css/utilisateurs/main.css">
+    <link rel="stylesheet" href="../../public/css/accueil/cards.css">
+    <link rel="stylesheet" href="../../public/css/utilisateurs/categorie-cards.css">
+    <link rel="stylesheet" href="../../public/css/utilisateurs/caroussel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+<img class="reflet-vert" src="../../public/images/reflet1.svg">
+<img class="reflet-bleu1" src="../../public/images/reflet3.svg">
+<img class="reflet-jaune1" src="../../public/images/reflet2.svg">
 <header>
     <h1>Gestion des Membres</h1>
     <nav>
@@ -24,7 +33,7 @@
 <main>
     <section class="user-management">
         <h2>Ajouter un Nouvel Utilisateur</h2>
-        <form id="add-user-form" action="../Views/admin/add_user.php" method="post">
+        <form id="add-user-form" action="add_user.php" method="post">
             <label for="nom">Nom d'utilisateur:</label>
             <input type="text" id="nom" name="nom" required>
 

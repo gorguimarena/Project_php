@@ -36,13 +36,13 @@
     <section class="carousel">
         <div class="carousel-container">
             <div class="carousel-slide active">
-                <img src="../../public/images/image1.jpg" alt="Image 1">
+                <img src="image1.jpg" alt="Image 1">
             </div>
             <div class="carousel-slide">
-                <img src="../../public/images/image2.jpg" alt="Image 2">
+                <img src="image2.jpg" alt="Image 2">
             </div>
             <div class="carousel-slide">
-                <img src="../../public/images/image3.jpg" alt="Image 3">
+                <img src="image3.jpg" alt="Image 3">
             </div>
             <div class="carousel-slide">
                 <img src="../../public/images/back3.jpg" alt="Image 4">
@@ -54,7 +54,7 @@
                 <img src="../../public/images/back1.jpg" alt="Image 6">
             </div>
             <div class="carousel-slide">
-                <img src="../../public/images/image3.jpg" alt="Image 7">
+                <img src="image3.jpg" alt="Image 7">
             </div>
             <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
             <a class="next" onclick="moveSlide(1)">&#10095;</a>
@@ -140,6 +140,6 @@
         </div>
     </div>
 </footer>
-<script src="../../public/js/scripte.js"></script>
+<script src="scripte.js"></script>
 </body>
 </html>

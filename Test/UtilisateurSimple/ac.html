@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil Utilisateur</title>
     <link rel="stylesheet" href="../../public/css/bootstrap.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="../../public/css/cards.css">
-    <link rel="stylesheet" href="categorie-cards.css">
-    <link rel="stylesheet" href="caroussel.css">
+    <link rel="stylesheet" href="../../public/css/utilisateurs/header.css">
+    <link rel="stylesheet" href="../../public/css/utilisateurs/footer.css">
+    <link rel="stylesheet" href="../../public/css/utilisateurs/main.css">
+    <link rel="stylesheet" href="../../public/css/accueil/cards.css">
+    <link rel="stylesheet" href="../../public/css/utilisateurs/categorie-cards.css">
+    <link rel="stylesheet" href="../../public/css/utilisateurs/caroussel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -36,13 +36,13 @@
     <section class="carousel">
         <div class="carousel-container">
             <div class="carousel-slide active">
-                <img src="image1.jpg" alt="Image 1">
+                <img src="../../public/images/image1.jpg" alt="Image 1">
             </div>
             <div class="carousel-slide">
-                <img src="image2.jpg" alt="Image 2">
+                <img src="../../public/images/image2.jpg" alt="Image 2">
             </div>
             <div class="carousel-slide">
-                <img src="image3.jpg" alt="Image 3">
+                <img src="../../public/images/image3.jpg" alt="Image 3">
             </div>
             <div class="carousel-slide">
                 <img src="../../public/images/back3.jpg" alt="Image 4">
@@ -54,7 +54,7 @@
                 <img src="../../public/images/back1.jpg" alt="Image 6">
             </div>
             <div class="carousel-slide">
-                <img src="image3.jpg" alt="Image 7">
+                <img src="../../public/images/image3.jpg" alt="Image 7">
             </div>
             <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
             <a class="next" onclick="moveSlide(1)">&#10095;</a>
@@ -140,6 +140,6 @@
         </div>
     </div>
 </footer>
-<script src="scripte.js"></script>
+<script src="../../public/js/scripte.js"></script>
 </body>
 </html>
