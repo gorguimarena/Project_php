@@ -1,0 +1,180 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: white;
+}
+
+header {
+    background-color:  #000000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    padding-bottom: 12px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffc107;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.user-management, .user-list {
+    background-color:  #000000;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-management h2, .user-list h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+    font-size: 1.1em;
+
+}
+
+form input, form select, form button {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form input, form select {
+    transition: border-color 0.3s;
+}
+
+form input:focus, form select:focus {
+    border-color: #495057;
+}
+
+form button {
+    background-color: #495057;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.5s;
+}
+
+form button:hover {
+    background-color: greenyellow;
+    color: black;
+    font-size: 20px;
+    transform: translateY(-2px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 1em;
+    background-color: #000000;
+}
+
+table th {
+    background-color:  #000000;
+    color: wheat;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.edit-btn, .delete-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.edit-btn:hover i {
+    color: #fd7e14;
+}
+
+.delete-btn:hover i {
+    color: #dc3545;
+}
+footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+body .reflet-vert {
+    position: absolute;
+    top: 0;
+    right: 7%;
+}
+body .reflet-bleu1 {
+    position: absolute;
+    bottom:-25px;
+    right: -16px;
+}
+
+body .reflet-jaune1 {
+    position: absolute;
+    bottom: -15%;
+    left: 30%;
+}
+.user-management input ,.user-management select{
+    background-color: #343a40;
+    outline: none;
+    color: white;
+}

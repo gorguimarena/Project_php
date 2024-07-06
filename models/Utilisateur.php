@@ -5,10 +5,9 @@ class Utilisateur
     private $nom;
     private $prenom;
 
- public function __construct($nom, $prenom) {
-    $this->nom = $nom;
-    $this->prenom = $prenom;
-    }
+ public function __construct() {
+
+ }
 
     public function modifier_info($prenom, $nom) {
      // Connexion à la base de données

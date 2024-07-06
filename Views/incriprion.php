@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Se connecter</title>
     <link rel="stylesheet" href="../public/css/bootstrap.css">
-    <link rel="stylesheet" href="../public/css/navBar.css">
+    <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/style_Ins-connect.css">
 </head>
 
@@ -32,26 +32,28 @@
     <div class="info">
         <div class="container">
             <h1 class="text-center mb-2 mt-4">S'inscrire</h1>
-            <div class="mb-4">
-                <label for="exampleFormControlInput1" class="form-label">Nom </label>
-                <input type="text" class="form-control" placeholder="Votre nom">
-            </div>
-            <div class="mb-4">
-                <label for="exampleFormControlInput1" class="form-label">Prenom </label>
-                <input type="text" class="form-control" placeholder="Votre prenom">
-            </div>
-            <div class="mb-4">
-                <label for="exampleFormControlInput1" class="form-label">Adresse e-mail </label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <label for="inputPassword5" class="form-label">Mot de passe</label>
-            <input type="password" id="inputPassword5" class="form-control" placeholder="Votre mot de passe" aria-describedby="passwordHelpBlock">
-            <label for="inputPassword5" class="form-label mt-4">Confirmation ot de passe</label>
-            <input type="password" id="inputPassword6" class="form-control" placeholder="Confirmer votre mot de passe" aria-describedby="passwordHelpBlock">
+            <form action="" method="post">
+                <div class="mb-4">
+                    <label for="nom" class="form-label">Nom </label>
+                    <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                </div>
+                <div class="mb-4">
+                    <label for="prenom" class="form-label">Prenom </label>
+                    <input type="text" class="form-control" id="prenom" placeholder="Votre prenom">
+                </div>
+                <div class="mb-4">
+                    <label for="exampleFormControlInput1" class="form-label">Adresse e-mail </label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <label for="inputPassword5" class="form-label">Mot de passe</label>
+                <input type="password" id="inputPassword5" class="form-control" placeholder="Votre mot de passe" aria-describedby="passwordHelpBlock">
+                <label for="inputPassword5" class="form-label mt-4">Confirmation ot de passe</label>
+                <input type="password" id="inputPassword5" class="form-control" placeholder="Confirmer votre mot de passe" aria-describedby="passwordHelpBlock">
 
-            <div class="d-grid gap-2 col-6 mx-auto mt-4">
-                <button class="btn btn-primary" type="button">S'inscrire</button>
-            </div>
+                <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                    <button class="btn btn-primary" type="button">S'inscrire</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -64,5 +66,25 @@
             Victor Hugo disait : <strong>Lire, c'est boire et manger.<br> L'esprit qui ne lit pas maigrit comme le corps qui ne mange pas.</strong></h6></p>
     </div>
 </div>
+<?php
+
+
+require "../Config/database.php";
+
+// Connexion à la base de données
+$conn = database();
+
+// Vérifier la connexion
+if ($conn->connect_error) {
+    die("Échec de la connexion : " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+}
+
+
+?>
 </body>
 </html>

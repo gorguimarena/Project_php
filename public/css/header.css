@@ -1,0 +1,41 @@
+.nav-bar , .nav-right{
+    display: flex;
+}
+.nav-bar {
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+}
+.nav-right{
+    justify-content: space-between;
+    gap: 20px;
+}
+.nav-right li {
+    list-style: none;
+    font-size: 18px;
+
+}
+ .nav-right li a{
+    text-decoration: none;
+     color: white;
+     font-size: 1.1em;
+     transition: color 0.3s;
+}
+.nav-bar .logo img {
+    width: 100px;
+}
+.nav-bar .logo {
+    display: flex;
+    align-items: center;
+}
+nav ul li a:hover {
+    color: #ffc107;
+}
+
+
+

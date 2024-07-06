@@ -1,0 +1,8 @@
+.cards {
+    padding: 5%;
+}
+.cards .container {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+}

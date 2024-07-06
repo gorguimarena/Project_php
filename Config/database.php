@@ -1,7 +1,7 @@
 <?php
 function database()
 {
-    $database='nameDB';
+    $database='library';
     $host='localhost';
     $user='root';
     $password="";

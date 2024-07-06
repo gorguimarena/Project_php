@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Biblio</title>
     <link rel="stylesheet" href="public/css/bootstrap.css">
-    <link rel="stylesheet" href="public/css/navBar.css">
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/footer.css">
+    <link rel="stylesheet" href="public/css/cards.css">
 </head>
 <body>
 
@@ -14,8 +16,8 @@
 <img class="reflet-bleu2" src="public/images/reflet3.svg">
 <img class="reflet-jaune1" src="public/images/reflet2.svg">
 <img class="reflet-jaune2" src="public/images/reflet2.svg">
-<header id="nav-bar">
-    <nav class="nav-bar">
+<header >
+    <nav class="nav-bar" id="nav-bar">
         <div class="logo">
             <img src="public/images/logo.svg" alt="Notre logo">
             <h2>Biblio</h2>

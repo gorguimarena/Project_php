@@ -1,0 +1,46 @@
+.categories {
+    margin-bottom: 40px;
+}
+
+.categories h5 {
+    font-size: 1.5em;
+    color: #343a40;
+}
+.categories .card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.categories h2 {
+    font-size: 2em;
+    color: white;
+}
+
+.categories .card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.categories .card .btn {
+    padding: 10px 10px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.categories .card .btn:hover {
+    background-color: #495057;
+    transform: translateY(-2px);
+}
+
+.categories .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

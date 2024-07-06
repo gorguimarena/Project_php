@@ -29,7 +29,7 @@ class Utilisateurs
         session_start();
         $_SESSION = [];
         session_destroy();
-        header("Location: index.php");
+        header("Location: utilisateur.php");
         exit; // Assurez-vous de sortir après la redirection
     }
 

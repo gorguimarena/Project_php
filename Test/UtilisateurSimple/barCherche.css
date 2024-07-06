@@ -1,0 +1,38 @@
+.chercher {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 25px;
+    width: 30%;
+}
+.bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.chercher select,
+.chercher input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.chercher input[type="text"] {
+    flex: 1;
+}
+.chercher button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.chercher button:hover {
+    background-color: #0056b3;
+}
