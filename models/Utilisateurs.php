@@ -30,7 +30,7 @@ class Utilisateurs
         $_SESSION = [];
         session_destroy();
         header("Location: utilisateur.php");
-        exit; // Assurez-vous de sortir après la redirection
+        header("Location:index.php"); //redirection vers la page principal
     }
 
     public function sup_compte($id)
