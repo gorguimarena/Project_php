@@ -1,0 +1,26 @@
+body .reflet-vert {
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+body .reflet-bleu1 {
+    position: absolute;
+    top:12%;
+    right: 20%;
+}
+body .reflet-jaune1 {
+    position: absolute;
+    bottom: 16%;
+    right: 30%;
+}
+
+.incrire {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10% 10px 10px 0;
+}
+
+.incrire .desc , .incrire .info {
+    width: 45%;
+}

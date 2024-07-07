@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Se connecter</title>
-    <link rel="stylesheet" href="../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/css/accueil/bootstrap.css">
     <link rel="stylesheet" href="../public/css/accueil/header.css">
-    <link rel="stylesheet" href="../public/css/style_Ins-connect.css">
+    <link rel="stylesheet" href="../public/css/utilisateurs/style_Ins-connect.css">
+    <link rel="stylesheet" href="../public/css/utilisateurs/reflet_ins.css">
 </head>
 
 <body>

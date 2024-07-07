@@ -29,7 +29,6 @@ class Utilisateurs
         session_start();
         $_SESSION = [];
         session_destroy();
-        header("Location: utilisateur.php");
         header("Location:index.php"); //redirection vers la page principal
     }
 

@@ -41,7 +41,7 @@ div strong {
 
 .emprunt {
     height: 80vh;
-    background-image: url("../images/back3.jpg");
+    background-image: url("../../images/back3.jpg");
     background-size: cover;
     object-fit: cover;
 }

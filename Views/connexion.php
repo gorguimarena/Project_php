@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Se connecter</title>
-    <link rel="stylesheet" href="../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/css/accueil/bootstrap.css">
     <link rel="stylesheet" href="../public/css/accueil/header.css">
-    <link rel="stylesheet" href="../public/css/style_Ins-connect.css">
+    <link rel="stylesheet" href="../public/css/utilisateurs/style_Ins-connect.css">
+    <link rel="stylesheet" href="../public/css/utilisateurs/reflet_con.css">
 </head>
 
 <body>
@@ -41,7 +42,6 @@
             <input class="btn btn-primary" type="submit" name="submit" value="Se connecter" >
         </div>
     </form>
-
 </div>
 
 <?php
@@ -72,13 +72,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
             while ($row=$result->fetch_assoc()){
                 switch ($row['status']){
                     case "utilisateur":
-                        echo "User simple";
+                        header("Location: user/space_user.php");
                         break;
                     case "administrateur":
-                        echo "admin";
+                        header("Location: admin/space_admin.php");
                         break;
                     case "bibliothecaire":
-                        echo "bibliothecaire";
+                        header("Location: bib/space_bib.php");
                         break;
                     default:
                         echo "mort";

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Biblio</title>
-    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/accueil/bootstrap.css">
     <link rel="stylesheet" href="public/css/accueil/header.css">
     <link rel="stylesheet" href="public/css/accueil/main.css">
     <link rel="stylesheet" href="public/css/accueil/footer.css">
@@ -99,7 +99,7 @@
         </div>
         <div class="container">
             <div class="card" style="width: 18rem;">
-                <img src="public/images/livre4.jpg" class="card-img-top" alt="livre1">
+                <img src="public/images/livre5.jpg" class="card-img-top" alt="livre1">
                 <div class="card-body">
                     <h5 class="card-title">Eleanor Roosevelt</h5>
                     <p class="card-text">Vous gagnez en force, en courage et en confiance à chaque expérience où vous arrêtez vraiment pour regarder la peur en face. Vous êtes capable de vous dire : 'J'ai vécu cette horreur. Je peux affronter la prochaine chose qui viendra.' Vous devez faire la chose que vous pensez ne pas pouvoir faire.</p>
@@ -107,7 +107,7 @@
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
-                <img src="public/images/livre2.jpg" class="card-img-top" alt="livre1">
+                <img src="public/images/liivre2.jpg" class="card-img-top" alt="livre1">
                 <div class="card-body">
                     <h5 class="card-title"> Stacy Hawkins Adams</h5>
                     <p class="card-text">Dans les pages de son journal, elle a trouvé la liberté d'exprimer ses passions les plus profondes et ses rêves les plus audacieux. Chaque mot écrit était un pas vers la découverte de soi et l'affirmation de son existence.</p>
@@ -115,7 +115,7 @@
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
-                <img src="public/images/livre3.jpg   " class="card-img-top" alt="livre1">
+                <img src="public/images/livre5.jpg   " class="card-img-top" alt="livre1">
                 <div class="card-body">
                     <h5 class="card-title">Barbara Hitchcock,</h5>
                     <p class="card-text">"Les tonalités uniques et la spontanéité des Polaroids en ont fait un format photographique apprécié depuis des décennies. Imprégné de toute la chaleur et de la nostalgie d'un album de famille, cet hommage à l'appareil instantané présente des centaines d'images issues de la collection de la Polaroid Corporation."
