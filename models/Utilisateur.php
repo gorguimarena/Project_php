@@ -6,7 +6,8 @@ class Utilisateur
     private $prenom;
 
 
-    public function modifier_info($prenom, $nom) {   
+    public function modifier_info($prenom, $nom) {    
+        
      // Connexion à la base de données
         $con = database(); if ($con) {
             // On prépare la requête de mise à jour
