@@ -20,7 +20,7 @@
         <div>
             <ul class="nav-right">
                 <li><a href="../index.php">Accueil</a></li>
-                <li><a href="./incriprion.php">S'inscrire <img src="../public/images/IconlogoOut.svg"></a></li>
+                <li><a href="incriprion.php">S'inscrire <img src="../public/images/IconlogoOut.svg"></a></li>
             </ul>
         </div>
     </nav>
@@ -34,10 +34,10 @@
     <form method="POST" action="">
         <div class="mb-4">
             <label for="exampleFormControlInput1" class="form-label">Adresse e-mail </label>
-            <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
         </div>
         <label for="inputPassword5" class="form-label">Mot de passe</label>
-        <input type="password" id="inputPassword5" name="password" class="form-control" placeholder="Votre mot de passe" aria-describedby="passwordHelpBlock">
+        <input type="password" id="inputPassword5" name="password" class="form-control" placeholder="Votre mot de passe" aria-describedby="passwordHelpBlock" required>
         <div class="d-grid gap-2 col-6 mx-auto mt-4">
             <input class="btn btn-primary" type="submit" name="submit" value="Se connecter" >
         </div>
@@ -45,6 +45,9 @@
 </div>
 
 <?php
+
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -65,19 +68,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
             $stmt->bind_param('i', $row['id_user']);
             $stmt->execute();
         }
-
+        echo "Bon ";
         $result= $stmt->get_result();
 
         if ($result->num_rows){
             while ($row=$result->fetch_assoc()){
                 switch ($row['status']){
                     case "utilisateur":
+                        $_SESSION["utilisateur"]=$row;
                         header("Location: user/space_user.php");
                         break;
                     case "administrateur":
+                        $_SESSION["admin"]=$row;
                         header("Location: admin/space_admin.php");
                         break;
                     case "bibliothecaire":
+                        $_SESSION["bibliothecaire"]=$row;
                         header("Location: bib/space_bib.php");
                         break;
                     default:

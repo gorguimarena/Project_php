@@ -23,7 +23,7 @@
         <div>
             <ul class="nav-right">
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="list_books.php">Chercher un Livre</a></li>
+                <li><a href="../../Views/user/list_books.php">Chercher un Livre</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#">Déconnexion<img src="../../public/images/IconlogoOut.svg"></a></li>
 

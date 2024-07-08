@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+if (isset($_SESSION['utilisateur'])) {
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,10 +28,10 @@
         </div>
         <div>
             <ul class="nav-right">
-                <li><a href="index.php">Accueil</a></li>
+                <li><a href="space_user.php">Accueil</a></li>
                 <li><a href="list_books.php">Chercher un Livre</a></li>
-                <li><a href="index.php#contact">Contact</a></li>
-                <li><a href="#">Déconnexion<img src="../../public/images/IconlogoOut.svg"></a></li>
+                <li><a href="space_user.php#contact">Contact</a></li>
+                <li><a href="../logout.php">Déconnexion<img src="../../public/images/IconlogoOut.svg"></a></li>
 
             </ul>
         </div>
@@ -67,7 +73,7 @@
         ?>
 
         <section class="user-list">
-            <h2>Liste des livres trouves</h2>
+            <h2 class="mt-5 mb-4">Liste des livres trouves</h2>
             <table>
                 <thead>
                 <tr>
@@ -95,7 +101,7 @@
                             </tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='4'>Aucun livre trouvé</td></tr>";
+                    echo "<tr><td colspan='5'>Aucun livre trouvé</td></tr>";
                 }
 
                 ?>
@@ -121,7 +127,7 @@
                         <h5 class="card-title">Eleanor Roosevelt</h5>
                         <p class="card-text">Vous gagnez en force, en courage et en confiance à chaque expérience où
                             vous arrêtez vraiment pour regarder la peur en face.</p>
-                        <a href="../../Views/connexion.php" class="btn btn-primary">Empruntez</a>
+                        <a href="../connexion.php" class="btn btn-primary">Empruntez</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -130,7 +136,7 @@
                         <h5 class="card-title"> Stacy Hawkins Adams</h5>
                         <p class="card-text">Dans les pages de son journal, elle a trouvé la liberté d'exprimer ses
                             passions les plus profondes et ses rêves les plus audacieux.</p>
-                        <a href="../../Views/connexion.php" class="btn btn-primary">Empruntez</a>
+                        <a href="../connexion.php" class="btn btn-primary">Empruntez</a>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
@@ -140,7 +146,7 @@
                         <p class="card-text">"Les tonalités uniques et la spontanéité des Polaroids en ont fait un
                             format photographique apprécié depuis des décennies.
                         </p>
-                        <a href="../../Views/connexion.php" class="btn btn-primary">Empruntez</a>
+                        <a href="../connexion.php" class="btn btn-primary">Empruntez</a>
                     </div>
                 </div>
             </div>
@@ -154,3 +160,9 @@
 
 </body>
 </html>
+
+    <?php
+} else {
+    header("Location: ../connexion.php?msg=non entrer");
+
+}

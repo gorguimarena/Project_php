@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+if (isset($_SESSION['utilisateur'])) {
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,10 +28,10 @@
         </div>
         <div>
             <ul class="nav-right">
-                <li><a href="index.php">Accueil</a></li>
+                <li><a href="space_user.php">Accueil</a></li>
                 <li><a href="list_books.php">Chercher un Livre</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#">Déconnexion<img src="../../public/images/IconlogoOut.svg"></a></li>
+                <li><a href="../logout.php">Déconnexion<img src="../../public/images/IconlogoOut.svg"></a></li>
 
             </ul>
         </div>
@@ -36,13 +42,13 @@
     <section class="carousel">
         <div class="carousel-container">
             <div class="carousel-slide active">
-                <img src="image1.jpg" alt="Image 1">
+                <img src="../../public/images/back1.jpg" alt="Image 1">
             </div>
             <div class="carousel-slide">
-                <img src="image2.jpg" alt="Image 2">
+                <img src="../../public/images/back1.jpg" alt="Image 2">
             </div>
             <div class="carousel-slide">
-                <img src="image3.jpg" alt="Image 3">
+                <img src="../../public/images/back1.jpg" alt="Image 3">
             </div>
             <div class="carousel-slide">
                 <img src="../../public/images/back3.jpg" alt="Image 4">
@@ -54,7 +60,7 @@
                 <img src="../../public/images/back1.jpg" alt="Image 6">
             </div>
             <div class="carousel-slide">
-                <img src="image3.jpg" alt="Image 7">
+                <img src="../../public/images/back1.jpg" alt="Image 7">
             </div>
             <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
             <a class="next" onclick="moveSlide(1)">&#10095;</a>
@@ -140,6 +146,12 @@
         </div>
     </div>
 </footer>
-<script src="scripte.js"></script>
+<script src="../../public/js/scripte.js"></script>
 </body>
 </html>
+
+    <?php
+} else {
+    header("Location: ../connexion.php?msg=non entrer");
+
+}

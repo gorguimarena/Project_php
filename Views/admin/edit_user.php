@@ -11,11 +11,11 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire
     $id = $_POST['id'];
-    $username = $_POST['username'];
-    $role = $_POST['role'];
+    $username = $_POST['nom'];
+    $role = $_POST['status'];
 
     // Requête pour mettre à jour l'utilisateur
-    $sql = "UPDATE users SET username='$username', role='$role' WHERE id='$id'";
+    $sql = "UPDATE utilisateur SET nom='$username', status='$role' WHERE id='$id'";
 
     if ($conn->query($sql) === TRUE) {
         echo "Utilisateur modifié avec succès";
@@ -24,13 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $conn->close();
-    header('Location: utilisateur.php'); // Rediriger vers la page principale
+    header('Location: space_admin.php'); // Rediriger vers la page principale
 } else {
     // Récupérer l'ID de l'utilisateur à modifier
     $id = $_GET['id'];
 
     // Requête pour obtenir les informations de l'utilisateur
-    $sql = "SELECT * FROM users WHERE id='$id'";
+    $sql = "SELECT * FROM utilisateur WHERE id='$id'";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
@@ -64,10 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <main>
             <section class="user-management">
                 <h2>Modifier Utilisateur</h2>
-                <form action="edit_user.php" method="post">
+                <form action="edit_user.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                     <label for="username">Nom d'utilisateur:</label>
-                    <input type="text" id="username" name="username" value="<?php echo $row['username']; ?>" required>
+                    <input type="text" id="username" name="username" value="<?php echo $row['nom']; ?>" required>
 
                     <label for="prenom">Prenom d'utilisateur:</label>
                     <input type="text" id="prenom" name="prenom" value="<?php echo $row['prenom']; ?>" required>
@@ -79,13 +79,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="text" id="password" name="password" value="<?php echo $row['password']; ?>" required>
 
                     <label for="role">Rôle:</label>
-                    <select id="role" name="role">
-                        <option value="utilisateur" <?php if($row['role'] == 'utilisateur') echo 'selected'; ?>>Utilisateur</option>
-                        <option value="bibliothecaire" <?php if($row['role'] == 'bibliothecaire') echo 'selected'; ?>>Bibliothécaire</option>
-                        <option value="administrateur" <?php if($row['role'] == 'administrateur') echo 'selected'; ?>>Administrateur</option>
+                    <select id="role" name="status">
+                        <option value="utilisateur" <?php if($row['status'] == 'utilisateur') echo 'selected'; ?>>Utilisateur</option>
+                        <option value="bibliothecaire" <?php if($row['status'] == 'bibliothecaire') echo 'selected'; ?>>Bibliothécaire</option>
+                        <option value="administrateur" <?php if($row['status'] == 'administrateur') echo 'selected'; ?>>Administrateur</option>
                     </select>
 
-                    <button type="submit" class="btn">Modifier</button>
+                    <button type="submit" name="submit" class="btn">Modifier</button>
                 </form>
             </section>
         </main>

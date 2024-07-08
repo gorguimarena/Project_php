@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil Utilisateur</title>
-    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <title>Gestion des Membres de la Bibliothèque</title>
+    <link rel="stylesheet" href="../../public/css/accueil/bootstrap.css">
     <link rel="stylesheet" href="../../public/css/utilisateurs/header.css">
     <link rel="stylesheet" href="../../public/css/utilisateurs/footer.css">
     <link rel="stylesheet" href="../../public/css/utilisateurs/main.css">
-    <link rel="stylesheet" href="../../public/css/accueil/cards.css">
-    <link rel="stylesheet" href="../../public/css/utilisateurs/categorie-cards.css">
-    <link rel="stylesheet" href="../../public/css/utilisateurs/caroussel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
 <header id="nav-bar">
     <nav class="nav-bar">
         <div class="logo">
@@ -22,124 +20,97 @@
         </div>
         <div>
             <ul class="nav-right">
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="list_books.php">Chercher un Livre</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#">Déconnexion<img src="../../public/images/IconlogoOut.svg"></a></li>
-
+                <li><a href="space_admin.php">Accueil</a></li>
+                <li><a href="user_simple.php">Utilisateurs</a></li>
+                <li><a href="bib.php">Bibliothécaires</a></li>
+                <li><a href="admin.php">Administrateurs</a></li>
+                <li><a href="../logout.php">Déconnexion</a></li>
             </ul>
         </div>
     </nav>
 </header>
 
-<main>
-    <section class="carousel">
-        <div class="carousel-container">
-            <div class="carousel-slide active">
-                <img src="../../public/images/image1.jpg" alt="Image 1">
-            </div>
-            <div class="carousel-slide">
-                <img src="../../public/images/image2.jpg" alt="Image 2">
-            </div>
-            <div class="carousel-slide">
-                <img src="../../public/images/image3.jpg" alt="Image 3">
-            </div>
-            <div class="carousel-slide">
-                <img src="../../public/images/back3.jpg" alt="Image 4">
-            </div>
-            <div class="carousel-slide">
-                <img src="../../public/images/back2.jpg" alt="Image 5">
-            </div>
-            <div class="carousel-slide">
-                <img src="../../public/images/back1.jpg" alt="Image 6">
-            </div>
-            <div class="carousel-slide">
-                <img src="../../public/images/image3.jpg" alt="Image 7">
-            </div>
-            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-            <a class="next" onclick="moveSlide(1)">&#10095;</a>
-        </div>
-    </section>
-    <div class="center">
-        <img src="../../public/images/redcenter.svg">
-    </div>
-    <section class="categories container">
-        <h2 class="mt-5 mb-5">Catégories de Livres Disponibles</h2>
-        <div class="row ">
-            <div class="col-sm-3 mb-3 mb-sm-0">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Fiction</h5>
-                        <p class="card-text">Description du genre</p>
-                        <a href="#" class="btn btn-primary">Les details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Roman</h5>
-                        <p class="card-text">Description du genre</p>
-                        <a href="#" class="btn btn-primary">Les details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="center">
-        <img src="../../public/images/redcenter.svg">
-    </div>
-    <div class="cards">
-        <div class="text-center">
-            <h1>Nos livres </h1>
-            <h4 class="mb-5"><strong>Vivez dans le monde des imaginations</strong></h4>
-        </div>
-        <div class="container">
-            <div class="card" style="width: 18rem;">
-                <img src="../../public/images/back1.jpg" class="card-img-top" alt="livre1">
-                <div class="card-body">
-                    <h5 class="card-title">Eleanor Roosevelt</h5>
-                    <p class="card-text">Vous gagnez en force, en courage et en confiance à chaque expérience où vous arrêtez vraiment pour regarder la peur en face.</p>
-                    <a href="../../Views/connexion.php" class="btn btn-primary">Empruntez</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="../../public/images/doLivre.jpg" class="card-img-top" alt="livre1">
-                <div class="card-body">
-                    <h5 class="card-title"> Stacy Hawkins Adams</h5>
-                    <p class="card-text">Dans les pages de son journal, elle a trouvé la liberté d'exprimer ses passions les plus profondes et ses rêves les plus audacieux.</p>
-                    <a href="../../Views/connexion.php" class="btn btn-primary">Empruntez</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="../../public/images/doLivre.jpg" class="card-img-top" alt="livre1">
-                <div class="card-body">
-                    <h5 class="card-title">Barbara Hitchcock,</h5>
-                    <p class="card-text">"Les tonalités uniques et la spontanéité des Polaroids en ont fait un format photographique apprécié depuis des décennies.
-                    </p>
-                    <a href="../../Views/connexion.php" class="btn btn-primary">Empruntez</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
+<main class="container">
+    <section class="user-management">
+        <h2>Ajouter un Nouvel Utilisateur</h2>
+        <form id="add-user-form" action="add_user.php" method="post">
+            <label for="nom">Nom d'utilisateur:</label>
+            <input type="text" id="nom" name="nom" required>
 
-<footer id="contact">
-    <div class="container footer">
-        <h1 class="text-center mb-5">Nous-contactez</h1>
-        <div class="mb-4">
-            <label for="exampleFormControlInput1" class="form-label">Adresse e-mail </label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-4">
-            <label for="exampleFormControlTextarea1" class="form-label">Votre message</label>
-            <textarea class="form-control" placeholder="Votre message ici" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary" type="button">Envoyer</button>
-        </div>
-    </div>
+            <label for="prenom">Prenom d'utilisateur</label>
+            <input type="text" id="prenom" name="prenom" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Mot de passe </label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="conf">confirmation mot de passe</label>
+            <input type="password" id="conf" name="conf" required>
+
+            <label for="role">Rôle:</label>
+            <select id="role" name="role">
+                <option value="bibliotehcaire">Bibliothécaire</option>
+                <option value="administrateur">Administrateur</option>
+            </select>
+
+            <input type="submit" class="btn" value="Ajouter">
+        </form>
+    </section>
+
+    <section class="user-list">
+        <h2>Liste des Utilisateurs</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom d'utilisateur</th>
+                <th>Rôle</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            // Connexion à la base de données
+            require "../../Config/database.php";
+
+            $conn = database();
+
+            // Vérifier la connexion
+            if ($conn->connect_error) {
+            die("Échec de la connexion : " . $conn->connect_error);
+            }
+
+            // Requête pour obtenir tous les utilisateurs
+            $sql = "SELECT * FROM utilisateur";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+            // Afficher chaque utilisateur
+            while($row = $result->fetch_assoc()) {
+            echo "<tr>
+                <td>" . $row["id"]. "</td>
+                <td>" . $row["nom"]. "</td>
+                <td>" . $row["role"]. "</td>
+                <td>
+                    <a href='edit_user.php?id=" . $row["id"]. "' class='edit-btn'><i class='fas fa-edit'></i></a>
+                    <a href='delete_user.php?id=" . $row["id"]. "' class='delete-btn'><i class='fas fa-trash-alt'></i></a>
+                </td>
+            </tr>";
+            }
+            } else {
+            echo "<tr><td colspan='4'>Aucun utilisateur trouvé</td></tr>";
+            }
+
+            $conn->close();
+            ?>
+            </tbody>
+        </table>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Bibliothèque. Tous droits réservés.</p>
 </footer>
-<script src="../../public/js/scripte.js"></script>
 </body>
 </html>

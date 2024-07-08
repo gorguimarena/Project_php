@@ -27,6 +27,7 @@
                 <li><a href="#ecosyteme">Ecosystème</a></li>
                 <li><a href="#contact">Nous-contactez</a></li>
                 <li><a href="Views/connexion.php">Se Connecter <img src="public/images/IconlogoOut.svg"></a></li>
+                <li><a href="Views/incriprion.php">S'inscrire<img src="public/images/IconlogoOut.svg"></a></li>
             </ul>
         </div>
     </nav>
@@ -52,8 +53,8 @@
         </div>
         <div>
             <h1>+100<strong>K</strong></h1>
-            <p>Le lorem ipsum (également appelé faux-texte<br>
-                lipsum, ou bolo bolo) est, en imprimerie,une </p>
+            <p>Nos services etant si agreable <br>
+                attire les gens de toute part</p>
         </div>
     </div>
     <div class="center">
@@ -156,18 +157,20 @@
 
 <footer id="contact">
     <div class="container footer">
-        <h1 class="text-center mb-5">Nous-contactez</h1>
-        <div class="mb-4">
-            <label for="exampleFormControlInput1" class="form-label">Adresse e-mail </label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-4">
-            <label for="exampleFormControlTextarea1" class="form-label">Votre message</label>
-            <textarea class="form-control" placeholder="Votre message ici" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary" type="button">Envoyer</button>
-        </div>
+        <form method="POST" action="contacter.php">
+            <h1 class="text-center mb-5">Nous-contactez</h1>
+            <div class="mb-4">
+                <label for="exampleFormControlInput1" class="form-label">Adresse e-mail </label>
+                <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-4">
+                <label for="exampleFormControlTextarea1" class="form-label">Votre message</label>
+                <textarea class="form-control" name="commentaire" placeholder="Votre message ici" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="button">Envoyer</button>
+            </div>
+        </form>
     </div>
 </footer>
 

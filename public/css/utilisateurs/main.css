@@ -1,16 +1,19 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 20px 0 0 0  ;
+    padding: 20px 0 0 0;
     background-color: #000000;
     color: white;
+    height: 100vh;
 }
+
 main {
     padding: 40px 20px;
     max-width: 100%;
     margin: auto;
     text-align: center;
 }
+
 
 .accueil {
     display: flex;
@@ -19,6 +22,7 @@ main {
     height: 85vh;
     padding: 17%;
 }
+
 .accueil .container {
     padding: 12px;
 }
@@ -28,9 +32,11 @@ main {
     justify-content: center;
     margin: 4% 0 4% 0;
 }
+
 .mt {
     padding-top: 7%;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -46,7 +52,54 @@ table th, table td {
 }
 
 table th {
-    background-color:  #000000;
+    background-color: #000000;
     color: wheat;
     font-weight: bold;
 }
+main .user-management, main .user-list {
+    background-color: transparent;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main .user-management h2,main .user-list h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+main form label {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+main form input,main form select, form .btn {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #343a40;
+    color: white;
+    width: 100%;
+}
+
+main form .btn {
+    background-color: #343a40;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+main form .btn:hover {
+    background-color: #495057;
+}
+

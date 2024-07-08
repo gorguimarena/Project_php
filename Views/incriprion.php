@@ -19,7 +19,7 @@
         <div>
             <ul class="nav-right">
                 <li><a href="../index.php">Accueil</a></li>
-                <li><a href="./incriprion.php">Se Connecter <img src="../public/images/IconlogoOut.svg"></a></li>
+                <li><a href="connexion.php">Se Connecter <img src="../public/images/IconlogoOut.svg"></a></li>
             </ul>
         </div>
     </nav>
@@ -53,6 +53,7 @@
                 <label for="conf" class="form-label mt-4">Confirmation ot de passe</label>
                 <input type="password" name="conf" id="conf" class="form-control"
                        placeholder="Confirmer votre mot de passe" aria-describedby="passwordHelpBlock">
+                <input type="hidden" name="status" value="utilisateur">
                 <div class="d-grid gap-2 col-6 mx-auto mt-4">
                     <input class="btn btn-primary " name="submit" type="submit" value="S'inscrire">
                 </div>
@@ -76,73 +77,6 @@
                 qui ne mange pas.</strong></h6></p>
     </div>
 </div>
-<?php
 
-
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
-
-
-
-    require_once "../Config/database.php";
-
-    $conn = database();
-
-// Vérifier la connexion
-    if ($conn->connect_error) {
-        die("Échec de la connexion : " . $conn->connect_error);
-    }
-
-    $prenom = $_POST['prenom'];
-    $nom = $_POST['nom'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $conf = $_POST['conf'];
-    $status="utilisateur";
-
-    // Vérifier la confirmation du mot de passe
-    if ($password !== $conf) {
-        die("Les mots de passe ne correspondent pas.");
-    }
-
-    // Préparer la requête
-    $stmt = $conn->prepare("INSERT INTO utilisateur (nom,prenom,status) VALUES (?, ?, ?)");
-
-    if ($stmt === false) {
-        die("Erreur de préparation de la requête : " . $conn->error);
-    }
-
-    // Assigner les paramètres de la requête
-    $stmt->bind_param('sss', $nom,$prenom,$status);
-
-    // Exécuter la requête
-    $stmt->execute();
-
-    // Vérifier si l'insertion est réussie
-    if ($stmt->affected_rows > 0) {
-        // Récupérer l'ID de l'utilisateur inséré
-        $id = $stmt->insert_id;
-
-        // Créer un compte administrateur
-        //on prepare la requete
-        $stmt=$conn->prepare("INSERT INTO compte(email,password,id_user) VALUES (?,?,?)");
-        //on donne les parametre de la requete
-        $stmt->bind_param('sss',$email,$password,$id);
-        //on execute la requete
-        $stmt->execute();
-
-        // Rediriger vers la page de connexion
-        header('Location: connexion.php');
-        exit(); // Assurez-vous que le script s'arrête après la redirection
-    } else {
-        echo "Échec de l'insertion de l'utilisateur.";
-    }
-
-    // Fermer la requête
-    $stmt->close();
-}
-
-// Fermer la connexion à la base de données
-$conn->close();
-?>
 </body>
 </html>
