@@ -13,27 +13,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
     $username = $_POST['nom'];
     $role = $_POST['status'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
     // Requête pour mettre à jour l'utilisateur
     $sql = "UPDATE utilisateur SET nom='$username', status='$role' WHERE id='$id'";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Utilisateur modifié avec succès";
+        // Requête pour mettre à jour l'utilisateur
+        $sql = "UPDATE compte SET email='$email', password='$password' WHERE id_user='$id'";
+        if ($conn->query($sql) === TRUE) {
+            $conn->close();
+            switch ($role){
+                case "utilisateur":
+                    header('Location: user_simple.php'); // Rediriger vers la page de l'admin
+                    break;
+                case "administrateur":
+                    header('Location: admin.php'); // Rediriger vers la page de l'admin
+                    break;
+                case "bibliothecaire":
+                    header('Location: bib.php'); // Rediriger vers la page de l'admin
+                    break;
+            }
+        }
     } else {
         echo "Erreur : " . $conn->error;
     }
 
-    $conn->close();
-    header('Location: space_admin.php'); // Rediriger vers la page principale
+
 } else {
     // Récupérer l'ID de l'utilisateur à modifier
     $id = $_GET['id'];
 
     // Requête pour obtenir les informations de l'utilisateur
-    $sql = "SELECT * FROM utilisateur WHERE id='$id'";
+    $sql = "SELECT * FROM utilisateur inner join compte on compte.id_user = utilisateur.id WHERE id='$id'";
     $result = $conn->query($sql);
 
-    if ($result->num_rows == 1) {
+    if ($result->num_rows == 1 ) {
         // Afficher le formulaire de modification
         $row = $result->fetch_assoc();
         ?>
@@ -48,16 +64,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         </head>
         <body>
-        <header>
-            <h1>Gestion des Membres</h1>
-            <nav>
-                <ul>
-                    <li><a href="../../Test/index.php">Accueil</a></li>
-                    <li><a href="../../Test/utilisateur.php">Utilisateurs</a></li>
-                    <li><a href="../../Test/index.php">Bibliothécaires</a></li>
-                    <li><a href="../../Test/utilisateur.php">Administrateurs</a></li>
-                    <li><a href="../logout.php">Déconnexion</a></li>
-                </ul>
+        <header id="nav-bar">
+            <nav class="nav-bar">
+                <div class="logo">
+                    <img src="../../public/images/logo.svg" alt="Notre logo">
+                    <h2>Biblio</h2>
+                </div>
+                <div>
+                    <ul class="nav-right">
+                        <li><a href="space_admin.php">Accueil</a></li>
+                        <li><a href="user_simple.php">Utilisateurs</a></li>
+                        <li><a href="bib.php">Bibliothécaires</a></li>
+                        <li><a href="admin.php">Administrateurs</a></li>
+                        <li><a href="../logout.php">Déconnexion</a></li>
+                    </ul>
+                </div>
             </nav>
         </header>
 
@@ -67,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="edit_user.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                     <label for="username">Nom d'utilisateur:</label>
-                    <input type="text" id="username" name="username" value="<?php echo $row['nom']; ?>" required>
+                    <input type="text" id="username" name="nom" value="<?php echo $row['nom']; ?>" required>
 
                     <label for="prenom">Prenom d'utilisateur:</label>
                     <input type="text" id="prenom" name="prenom" value="<?php echo $row['prenom']; ?>" required>

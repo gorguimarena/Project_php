@@ -101,7 +101,7 @@ if (isset($_SESSION['admin'])) {
                                 <td>" . $row["status"]. "</td>
                                 <td>
                                     <a href='edit_user.php?id=" . $row["id"]. "' class='edit-btn'><i class='fas fa-edit'></i></a>
-                                    <a href='delete_user.php?id=" . $row["id"]. "' class='delete-btn'><i class='fas fa-trash-alt'></i></a>
+                                    <a href='delete_user.php?status=".$row['status']."&id=" . $row["id"]. "' class='delete-btn'><i class='fas fa-trash-alt'></i></a>
                                 </td>
                             </tr>";
                 }
